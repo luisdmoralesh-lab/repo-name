@@ -1,4 +1,5 @@
 import Link from "next/link";
+import AuthButton from "./AuthButton";
 
 export default function Header() {
   return (
@@ -8,12 +9,15 @@ export default function Header() {
           <Link href="/" className="text-xl font-bold text-purple-600">
             Masajes Bolivia
           </Link>
-          <Link
-            href="/publicar"
-            className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg font-medium transition-colors"
-          >
-            + Publicar Anuncio
-          </Link>
+          <div className="flex items-center gap-4">
+            <AuthButton />
+            <Link
+              href="/publicar"
+              className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg font-medium transition-colors"
+            >
+              + Publicar
+            </Link>
+          </div>
         </div>
       </div>
     </header>
