@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
+import LaunchGate from "@/components/LaunchGate";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -9,8 +10,8 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "Masajes en Bolivia - Encuentra masajistas profesionales",
-  description: "Encuentra masajistas profesionales cerca de ti en Bolivia. Publica tu anuncio de servicios de masajes.",
+  title: "Masajes en Bolivia - Próximamente",
+  description: "La plataforma de masajes profesionales en Bolivia. Lanzamiento: 14 de Febrero, 2026.",
 };
 
 export default function RootLayout({
@@ -21,10 +22,12 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={`${geistSans.variable} font-sans antialiased bg-gray-50 min-h-screen`}>
-        <Header />
-        <main>
-          {children}
-        </main>
+        <LaunchGate>
+          <Header />
+          <main>
+            {children}
+          </main>
+        </LaunchGate>
       </body>
     </html>
   );
