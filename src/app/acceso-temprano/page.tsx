@@ -68,18 +68,19 @@ export default function EarlyAccessPage() {
 
     const supabase = createClient();
 
+    // TODO: Re-enable email check once RLS policies are fixed
     // Check if this email already used a code
-    const { data: existingRedemption } = await supabase
-      .from("code_redemptions")
-      .select("code")
-      .eq("email", email)
-      .single();
+    // const { data: existingRedemption } = await supabase
+    //   .from("code_redemptions")
+    //   .select("code")
+    //   .eq("email", email)
+    //   .single();
 
-    if (existingRedemption) {
-      setError("Este email ya usó un código de acceso");
-      setRegistering(false);
-      return;
-    }
+    // if (existingRedemption) {
+    //   setError("Este email ya usó un código de acceso");
+    //   setRegistering(false);
+    //   return;
+    // }
 
     // Double-check code is still available (in case someone else just used it)
     const { data: codeCheck } = await supabase
