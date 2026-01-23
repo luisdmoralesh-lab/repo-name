@@ -42,3 +42,4 @@ next-env.d.ts
 
 # private launch tasks
 launch-tasks.json
+invite-codes-private.txt
